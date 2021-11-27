@@ -91,18 +91,23 @@ router.post('/login', async (req, res) => {
   }
   try {
     const user = await User.findOne({email})
-    !user &&
-      res.status(400).json({
+    if (!user) {
+      return res.status(400).json({
         success: false,
         message: 'Incorrect email or password !',
       })
+    }
 
-    const validPassword = await argon2.verify(user.password, password)
-    !validPassword &&
-      res.status(400).json({
+    const validPassword = await argon2.verify(
+      user.password,
+      password
+    )
+    if (!validPassword) {
+      return res.status(400).json({
         success: false,
         message: 'Incorrect email or password !',
       })
+    }
 
     res.status(200).json({
       success: true,
