@@ -2,3 +2,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+::-webkit-scrollbar {
+  width: 8px;
+  display: none;
+}
+
+:hover::-webkit-scrollbar {
+  display: block;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 20px;
+}
+.content::-webkit-scrollbar {
+  display: none;
+}
