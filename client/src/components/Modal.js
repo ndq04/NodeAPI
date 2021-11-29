@@ -1,9 +1,11 @@
+import {ModalData} from './../data/Modal'
+
 function Modal({handleToggle}) {
   return (
     <div className='select-none'>
-      <div className='modal fixed inset-0 bg-gray-200 opacity-70'></div>
+      <div className='modal fixed inset-0 bg-gray-500 opacity-50'></div>
       <div
-        className='inner w-[32%] bg-white h-[80%] 
+        className='inner w-[32%] bg-[#f0f2f5] h-[70%] 
         shadow-lg absolute top-1/2 -translate-y-1/2 
         -translate-x-1/2 left-1/2 z-10 rounded-lg 
         flex flex-col p-4'
@@ -37,6 +39,7 @@ function Modal({handleToggle}) {
             </svg>
           </div>
         </div>
+
         <div className='modal-name'>
           <li className='flex items-center mb-1 py-4'>
             <img
@@ -49,13 +52,42 @@ function Modal({handleToggle}) {
             </p>
           </li>
         </div>
-        <div className='modal-text rounded-lg border border-gray-300 overflow-hidden h-1/2 bg-gray-100'>
+        <div
+          className='modal-text rounded-lg overflow-hidden 
+          h-1/2 bg-white shadow-md'
+        >
           <textarea
-            className='w-full h-full outline-none p-4 resize-none bg-gray-50'
+            className='w-full h-full outline-none p-4 
+            resize-none bg-white text-xl'
             placeholder='Bạn đang nghĩ gì thế ?'
           ></textarea>
         </div>
-        <button>Đăng</button>
+
+        <div
+          className='modal-option my-6 flex items-center 
+          justify-around bg-white rounded-md py-3 shadow-md'
+        >
+          <h3 className='font-semibold'>
+            Thêm vào bài viết
+          </h3>
+          <ul className='flex items-center justify-between'>
+            {ModalData.map((item) => (
+              <li
+                key={item.id}
+                className='flex items-center p-2 rounded-full 
+                hover:bg-gray-200 cursor-pointer'
+              >
+                {item.img}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <button
+          className='bg-blue-500 hover:bg-blue-700 py-1.5 
+          rounded-md text-white font-semibold'
+        >
+          Đăng
+        </button>
       </div>
     </div>
   )

@@ -6,7 +6,7 @@ import {useState} from 'react'
 import Modal from '../../components/Modal'
 
 function Home() {
-  const [isOpen, setIsOpen] = useState(true)
+  const [isOpen, setIsOpen] = useState(false)
   const handleToggle = () => setIsOpen(!isOpen)
   return (
     <>
