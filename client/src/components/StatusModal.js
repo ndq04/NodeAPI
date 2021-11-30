@@ -1,6 +1,9 @@
-import {ModalData} from './../data/Modal'
+import {useContext} from 'react'
+import {ModalData} from '../data/Modal'
+import {StatusContext} from '../contexts/StatusContext'
 
-function Modal({handleToggle}) {
+function Modal() {
+  const {handleToggle} = useContext(StatusContext)
   return (
     <div className='select-none'>
       <div className='modal fixed inset-0 bg-gray-500 opacity-50'></div>

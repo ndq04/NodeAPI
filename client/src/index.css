@@ -8,7 +8,8 @@
   display: none;
 }
 
-:hover::-webkit-scrollbar {
+.sidebar:hover::-webkit-scrollbar,
+.rightbar:hover::-webkit-scrollbar {
   display: block;
 }
 

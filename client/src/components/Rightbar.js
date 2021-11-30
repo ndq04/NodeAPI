@@ -1,4 +1,6 @@
+import {Users} from '../data/TestData'
 import {RightbarPR} from './../data/Rightbar'
+import OnlineFriend from './OnlineFriend'
 
 function Rightbar() {
   return (
@@ -36,86 +38,9 @@ function Rightbar() {
         Người liên hệ
       </h3>
       <ul>
-        <li className='flex items-center mb-1 px-2 py-1.5 rounded-md hover:bg-gray-200 cursor-pointer'>
-          <img
-            src='avatar.jpg'
-            alt='avatar'
-            className='w-8 h-8 rounded-full mr-2'
-          />
-          <p className='text-gray-800 font-semibold'>
-            Quang
-          </p>
-        </li>
-        <li className='flex items-center mb-1 px-2 py-1.5 rounded-md hover:bg-gray-200 cursor-pointer'>
-          <img
-            src='avatar.jpg'
-            alt='avatar'
-            className='w-8 h-8 rounded-full mr-2'
-          />
-          <p className='text-gray-800 font-semibold'>
-            Quang
-          </p>
-        </li>
-        <li className='flex items-center mb-1 px-2 py-1.5 rounded-md hover:bg-gray-200 cursor-pointer'>
-          <img
-            src='avatar.jpg'
-            alt='avatar'
-            className='w-8 h-8 rounded-full mr-2'
-          />
-          <p className='text-gray-800 font-semibold'>
-            Quang
-          </p>
-        </li>
-        <li className='flex items-center mb-1 px-2 py-1.5 rounded-md hover:bg-gray-200 cursor-pointer'>
-          <img
-            src='avatar.jpg'
-            alt='avatar'
-            className='w-8 h-8 rounded-full mr-2'
-          />
-          <p className='text-gray-800 font-semibold'>
-            Quang
-          </p>
-        </li>
-        <li className='flex items-center mb-1 px-2 py-1.5 rounded-md hover:bg-gray-200 cursor-pointer'>
-          <img
-            src='avatar.jpg'
-            alt='avatar'
-            className='w-8 h-8 rounded-full mr-2'
-          />
-          <p className='text-gray-800 font-semibold'>
-            Quang
-          </p>
-        </li>
-        <li className='flex items-center mb-1 px-2 py-1.5 rounded-md hover:bg-gray-200 cursor-pointer'>
-          <img
-            src='avatar.jpg'
-            alt='avatar'
-            className='w-8 h-8 rounded-full mr-2'
-          />
-          <p className='text-gray-800 font-semibold'>
-            Quang
-          </p>
-        </li>
-        <li className='flex items-center mb-1 px-2 py-1.5 rounded-md hover:bg-gray-200 cursor-pointer'>
-          <img
-            src='avatar.jpg'
-            alt='avatar'
-            className='w-8 h-8 rounded-full mr-2'
-          />
-          <p className='text-gray-800 font-semibold'>
-            Quang
-          </p>
-        </li>
-        <li className='flex items-center mb-1 px-2 py-1.5 rounded-md hover:bg-gray-200 cursor-pointer'>
-          <img
-            src='avatar.jpg'
-            alt='avatar'
-            className='w-8 h-8 rounded-full mr-2'
-          />
-          <p className='text-gray-800 font-semibold'>
-            Quang
-          </p>
-        </li>
+        {Users.map((user) => (
+          <OnlineFriend key={user.id} user={user} />
+        ))}
       </ul>
     </div>
   )

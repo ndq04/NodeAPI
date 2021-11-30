@@ -1,27 +1,20 @@
+import {useContext} from 'react'
 import Content from '../../components/Content'
-import Navbar from '../../components/Navbar'
 import Rightbar from '../../components/Rightbar'
 import Sidebar from '../../components/Sidebar'
-import {useState} from 'react'
-import Modal from '../../components/Modal'
+import Modal from '../../components/StatusModal'
+import {StatusContext} from '../../contexts/StatusContext'
 
 function Home() {
-  const [isOpen, setIsOpen] = useState(false)
-  const handleToggle = () => setIsOpen(!isOpen)
+  const {isOpenModal} = useContext(StatusContext)
   return (
     <>
-      <Navbar />
-      <div className='grid grid-cols-4 bg-[#f0f2f5] select-none px-2'>
+      <div className='grid grid-cols-4 gap-5 bg-[#f0f2f5] select-none px-2 pt-[60px]'>
         <Sidebar />
-        <Content handleToggle={handleToggle} />
+        <Content />
         <Rightbar />
       </div>
-      {isOpen && (
-        <Modal
-          isOpen={isOpen}
-          handleToggle={handleToggle}
-        />
-      )}
+      {isOpenModal && <Modal />}
     </>
   )
 }

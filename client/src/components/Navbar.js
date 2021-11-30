@@ -1,6 +1,6 @@
 function Navbar() {
   return (
-    <nav className='bg-white shadow-md w-full h-[60px] px-4 grid grid-cols-4 sticky select-none'>
+    <nav className='bg-white shadow-md w-full h-[60px] px-4 grid grid-cols-4 fixed select-none'>
       <div className='nav-left h-full flex items-center'>
         <img
           src='logo.png'

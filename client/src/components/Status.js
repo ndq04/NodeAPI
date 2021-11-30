@@ -1,11 +1,14 @@
+import {useContext} from 'react'
 import {ModalData} from './../data/Modal'
+import {StatusContext} from '../contexts/StatusContext'
 
-function Status({handleToggle}) {
+function Status() {
+  const {handleToggle} = useContext(StatusContext)
   const ModalDataFilter = ModalData.filter(
     (item) => item.id !== 4
   )
   return (
-    <div className='status w-[80%] m-auto bg-white shadow-md rounded-xl p-3'>
+    <div className='status w-[100%] m-auto bg-white shadow-md rounded-xl p-3'>
       <div className='flex items-center cursor-pointer border-b border-gray-300 pb-4 mb-4'>
         <img
           src='avatar.jpg'
